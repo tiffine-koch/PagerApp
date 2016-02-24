@@ -1,0 +1,70 @@
+body{
+  /*background-color: #e6ffff;*/
+  background-color: #ffffe6;
+}
+h1 {
+  /*color: #ff1a1a;*/
+  font-weight: bold;
+  font-style: italic;
+  font-size: 36px;
+  /*color: #66ffff;*/
+  color: #00e6e6;
+}
+
+.awesome {
+  /*color: #66ff33;*/
+  color: #751aff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+h2{
+  color: #00e6e6;
+}
+
+label {
+  color: #ff66ff;
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+input {
+  margin-right: 20px;
+  height: 30px;
+  width: 200px;
+  border: 4px solid #66ffff;
+}
+
+#random {
+  margin-right: 20px;
+  height: 30px;
+  width: 300px;
+  border: 4px solid #66ffff;
+}
+
+button {
+  height: 30px;
+  width: 200px;
+  background-color: #66ffff;
+  color: #ff66ff;
+  font-size: 14px;
+  font-weight: bold;
+
+  /*border-radius: 10px;*/
+}
+
+h3 {
+  color: #ff66ff;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#zack {
+  height: 150px;
+  width: auto;
+  border: 20px solid white;
+}
