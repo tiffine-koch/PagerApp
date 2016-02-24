@@ -1,10 +1,6 @@
 'use strict';
 
-var allNamesArray = [];
-var numberOfFriends = [];
-var groupArray = [];
-var randomNumber
-var sepCommasArray = [];
+var allNamesArray = [], numberOfFriends = [], groupArray = [], randomNumber, sepCommasArray = [];
 
 document.addEventListener('DOMContentLoaded', init);
 
