@@ -3,7 +3,8 @@
 var allNamesArray = [];
 var numberOfFriends = [];
 var groupArray = [];
-var randomNumber;
+var randomNumber
+var sepCommasArray = [];
 
 document.addEventListener('DOMContentLoaded', init);
 
@@ -13,19 +14,24 @@ function init() {
   document.getElementById('random').addEventListener('click', pickRandom);
   document.getElementById('makeGroup').addEventListener('click', createGroup);
 }
-// var newName = document.getElementById("nameInput").innerHTML;
-// var newName = event.target.innerHTML;
 
 function addName() {
 
   var newName = document.getElementById("nameInput").value;
-  var sepCommas = newName.split(",");
-  console.log('commas:', sepCommas);
+  console.log('nameArray:', allNamesArray);
+
+  var sepCommas = newName.split(", ");
+  for(var i = 0; i < sepCommas.length; i++ ) {
+    // console.log("i", sepCommas[i]);
+    sepCommasArray.push(sepCommas[i]);
+    for(var i = 0; i < sepCommasArray.length; i++){
+      console.log("sep", sepCommasArray[i]);
+      allNamesArray.push(sepCommasArray[i]);
+    }
+  }
 
   allNamesArray.push(newName);
-  console.log('inside add name');
-  console.log('name:', newName);
-  console.log('nameArray:', allNamesArray);
+  // allNamesArray.push(newName, sepCommasArray[i]);
 
   var addTR = document.createElement("TR");
   var addName = document.createTextNode(newName);
@@ -46,48 +52,28 @@ function pickRandom() {
 
 function createGroup() {
   console.log('inside createGroup');
-
   var number = document.getElementById("groupNum").value;
-  console.log('number:', number);
-
-  // var groupArray = allNamesArray.map(function(i, item) {
-  //
-  // })
 
   for(var i = 0; i < number; i++) {
     var name = allNamesArray[Math.floor(Math.random() * allNamesArray.length)]; //everybody array
     numberOfFriends.push(name); //random
     console.log('random array', numberOfFriends);
 
-    if(numberOfFriends.length < number) {
-      function split(numberOfFriends, number) {
-        while (numberOfFriends.length) {
-          groupArray.push(numberOfFriends.splice(0, number));
-          console.log('groupArray', groupArray)
-          console.log(name);
-        } return groupArray;
-    }
-  }
-  split(numberOfFriends, number);
-  document.getElementById('groupNum').value = '';
+    // if(numberOfFriends.length < number) {
+      // function split(numberOfFriends, number) {
+      while (numberOfFriends.length) {
+        groupArray.push(numberOfFriends.splice(0, number));
+        console.log('groupArray', groupArray)
+        console.log(name);
+
+        var addGroupTR = document.createElement("TR");
+        var addGroup = document.createTextNode(groupArray);
+        addGroupTR.classList.add('awesome');
+        addGroupTR.appendChild(addGroup);
+        document.getElementById('randomGroup').appendChild(addGroupTR);
+      } return groupArray;
+      split(numberOfFriends, number);
+    // }
+      document.getElementById('groupNum').value = '';
   }
 }
-  // var outPut = document.getElementById("display");
-  // outPut.innerHTML = number;
-// var outPut = document.getElementById("display");
-// outPut.innerHTML = newName;
-// document.getElementById("display").innerHTML = allNamesArray;
-// var nameList = document.getElementById('display');
-// var names = nameList.getElementsByClassName('newFriend');
-
-// while (nameArray.length !== names.length) {
-//   nameArray.push(name[nameArray.length]);
-// };
-//
-// nameArray.forEach(function(item) {
-//   item.addEventListener('click', function(event) {
-//     console.log("name number is:", nameArray.indexOf(event.target));
-//     // event.target.classList.toggle('blue');
-//     // event.target.classList.toggle('yellow');
-//   })
-// });
